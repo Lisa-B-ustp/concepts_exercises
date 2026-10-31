@@ -61,7 +61,7 @@ function dayName(dayNumber) {
         case 7:
             return "Sunday";
         default:
-            return "Invalid"; // Fängt alle anderen Zahlen ab
+            return "Invalid";
     }
 }
 
@@ -74,6 +74,26 @@ function dayName(dayNumber) {
 //   countVowels("Hello World") -> 3
 // ---------------------------------------------------------------------
 function countVowels(text) {
+    let SumVowels = 0;
+       
+    for (let i = 0; i < text.length; i++) {
+    
+        switch(text[i]) {
+            case "a":
+            case "A":
+            case "e":
+            case "E":
+            case "i":
+            case "I":
+            case "o":
+            case "O":
+            case "u":
+            case "U":
+                SumVowels += 1;
+                break;
+        }
+    }
+    return SumVowels;
 }
 
 
