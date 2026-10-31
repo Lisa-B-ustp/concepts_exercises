@@ -137,6 +137,26 @@ function fizzBuzz(n) {
 //   isPalindrome("level") -> true
 // ---------------------------------------------------------------------
 function isPalindrome(word) {
+    let reversedText = "";
+    let rightText = "";
+    let i = word.length -1;
+
+    while (i >= 0) {
+        reversedText += word[i];
+        i--;
+    }
+
+    let x = 0;
+
+    while (x < word.length) {
+        rightText += word[x];
+        x++;
+    }
+    if (rightText === reversedText) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
