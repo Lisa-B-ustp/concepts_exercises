@@ -275,6 +275,27 @@ function gradeReport(student) {
 //   rockPaperScissors("rock", "paper") -> "Player 2 wins"
 // ---------------------------------------------------------------------
 function rockPaperScissors(choice1, choice2) {
+    const variableGame = ["rock", "paper", "scissors"];
+
+    if (choice1 !== variableGame[0] && choice1 !== variableGame[1] && choice1 !== variableGame[2]) {
+        return "Invalid input";
+    }
+    if (choice2 !== variableGame[0] && choice2 !== variableGame[1] && choice2 !== variableGame[2]) {
+        return "Invalid input";
+    }
+
+    if (choice1 === choice2) {
+        return "Draw";
+    }
+    else if (
+            (choice1 === variableGame[0] && choice2 === variableGame[2]) ||
+            (choice1 === variableGame[2] && choice2 === variableGame[1]) ||
+            (choice1 === variableGame[1] && choice2 === variableGame[0])) {
+        return "Player 1 wins";
+    }
+    else {
+        return "Player 2 wins";
+    }
 }
 
 
