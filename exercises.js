@@ -391,6 +391,15 @@ function isPrime(n) {
 //   primesUpTo(10) -> [2, 3, 5, 7]
 // ---------------------------------------------------------------------
 function primesUpTo(n) {
+    let primesNumbers = [];
+
+    for (let i = 2; i <= n; i++){
+       
+        if (isPrime(i) === true) {
+        primesNumbers.push(i);
+        }
+    }
+    return primesNumbers;
 }
 
 
@@ -405,6 +414,35 @@ function primesUpTo(n) {
 //     -> { wordCount: 4, longestWord: "quick" }
 // ---------------------------------------------------------------------
 function wordStatistics(sentence) {
+    let wordCount = 0;
+    let longestWord = "";
+    let currentWord = "";
+
+        for (let i = 0; i < sentence.length; i++) {
+            let letter = sentence[i];
+
+            if (letter !== " ") {
+                currentWord += letter;
+            } else {
+                if (currentWord.length > 0) {
+                    wordCount++;
+                    if (currentWord.length > longestWord.length) {
+                        longestWord = currentWord;
+                    }
+                    currentWord = "";
+                }
+            }
+        }
+    if (currentWord.length > 0) {
+        wordCount++;
+        if (currentWord.length > longestWord.length) {
+            longestWord = currentWord;
+        }
+    }
+    return {
+        wordCount: wordCount,
+        longestWord: longestWord
+    };
 }
 
 
